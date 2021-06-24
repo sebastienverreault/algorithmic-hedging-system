@@ -1,0 +1,62 @@
+@startuml
+
+<style>
+componentDiagram {
+  BackGroundColor #F0F0F0
+  LineThickness 1
+  LineColor black
+}
+document {
+  BackGroundColor white
+}
+
+rectangle {
+  BackGroundColor #D0D0D0
+  LineThickness 1
+  LineColor black
+}
+</style>
+
+
+rectangle architecture as "Architecture"{
+    rectangle ui as "User Interface" {
+        rectangle mvc as "MVC"
+    }
+
+    rectangle dataSource as "Data Source layer"{
+    }
+
+    rectangle dataProcess as "Data processing layer"{
+        rectangle dataFiltering as "Filtering"
+        rectangle dataETL as "ETL"
+        rectangle dataOds as "Storage"
+    }
+
+    rectangle intelligence as "Intelligence layer"{
+        rectangle intelServices as "Services"
+        rectangle intelProcessing as "Event processing"
+    }
+
+    rectangle prderProcessdataSource as "Order processing layer"{
+    }
+
+    rectangle reporting as "Reporting" {
+        rectangle dw as "Datawarehouse"
+    }
+}
+
+ui -[hidden]-> dataSource
+ui -[hidden]-> dataProcess
+ui -[hidden]-> intelligence
+ui -[hidden]-> prderProcessdataSource
+
+' dataSource -down[hidden]-> dataProcess
+' dataProcess -down[hidden]-> intelligence
+' intelligence -down[hidden]-> prderProcessdataSource
+
+reporting <-[hidden]- dataSource
+reporting <-[hidden]- dataProcess
+reporting <-[hidden]- intelligence
+reporting <-[hidden]- prderProcessdataSource
+
+@enduml

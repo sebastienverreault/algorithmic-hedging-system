@@ -2,7 +2,11 @@
 
 ## Conceptual Architecture / Model
 
-## Requirements
+![Algorithmic Hedging System Conceptual Architecture](res/ConceptualArchitecture.png)
+
+## System Components
+
+
 
 ### Functional Requirements
 ### Non-Functional Requirements
@@ -47,4 +51,5 @@
 ## Deliverables
 
 1. 
+1.
 
