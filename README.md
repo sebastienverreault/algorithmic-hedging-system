@@ -11,7 +11,7 @@
     - Publish raw for processing
 - Data Processing
     - Filter irrrelevant data
-    - ETL
+    - Extract Transform Load (ETL)
     - Enqueue/Publish as simple events for processing (ex. spot price dependence only)
     - Store in operational data store
     - Continous analysis of data store
@@ -23,13 +23,13 @@
 - Order Management
     - Compare against portfolio for sizing
     - Breakout large orders?
-    - Route orders to exchange OR Execution Management
+    - Route orders to exchange OR [Execution Management]()
     - Receive orders execution
     - Update portfolio
     - Enqueue/Publish execution result?
     - Update operational data store with execution result
 - Execution Management ?
-    - Get orders from Order Management
+    - Get orders from [Order Management]()
     - Route orders to exchange as maker
     - Chase the market until filled
     - Signal Order Management with orders execution
@@ -103,13 +103,13 @@
     - Wallet modification
 
 
-## Proposed Action Plan
+## Proposed Action Plan (phase 1)
 
 1. Build the Data Source and Data Processing layer
 1. Prototype the Intelligence layer for backtesting and validating
 
 
-## Deliverables
+## Deliverables (phase 1)
 
 1. Data Source 
     - FTX data publisher module
